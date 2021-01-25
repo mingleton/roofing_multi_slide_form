@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modernize</title>
+    <style>
+      /* Modernize TEST Form  */
+      /* Reset */
+      @import url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
+      :root {
+        font-size: 16px;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      ::before,
+      ::after {
+        box-sizing: inherit;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Montserrat,Helvetica,Arial,sans-serif;
+      }
+
+      header,
+      nav,
+      main,
+      section,
+      article,
+      aside,
+      time,
+      footer {
+        display: block;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0 0 15px;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1.25rem;
+      }
+
+      h5 {
+        font-size: 1rem;
+      }
+
+      h6 {
+        font-size: 0.75rem;
+      }
+
+
+      img {
+        max-width: 100%;
+      }
+
+      form {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+
+      
+
+      input,
+      textarea,
+      select,
+      button {
+        display: block;
+        margin-bottom: 15px;
+        padding: 5px 10px;
+        width: 100%;
+        font: inherit;
+      }
+
+      input[type='submit'],
+      input[type='button'],
+      input[type='reset'],
+      input[type='checkbox'],
+      /* input[type='radio'], */
+      button {
+        display: inline-block;
+        width: auto;
+      }
+
+      
+
+      ul,
+      ol {
+        margin: 0 0 15px 25px;
+        padding: 0;
+      }
+
+      ul li,
+      ol li {
+        margin: 0;
+        padding: 0;
+      }
+
+      /*
+           Styles
+       */
+
+      .nojs {
+        display: none;
+      }
+
+      h1 {
+        padding-bottom: 10px;
+        font-weight: 400;
+      }
+
+      .your-progress {
+        font-size: .65rem;
+        color: #8a8a8a;
+        text-transform: uppercase;
+      }
+
+      .wrapper {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 960px;
+      }
+
+      .bold-text {
+        font-weight: bolder;
+      }
+
+      .all-caps {
+        text-transform: uppercase;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .text-one {
+        text-align: left;
+        font-weight: 300;
+        letter-spacing: 0.1px;
+        color: #383838;
+      }
+
+      .form-wizard {
+        padding: 40px 50px;
+        background-color: #ffffff;
+        box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        min-height: 420px;;
+      }
+
+      .radio-colored label{
+        color: #545253;
+      }
+
+      
+      .step {
+        display: none;
+        min-height: 280px;
+      }
+
+      .step.is-active {
+        display: block;
+      }
+
+      .input-group {
+        padding-bottom: 10px;
+      }
+
+      .input-group.has-error .form-control {
+        border-color: #ff3355;
+      }
+
+      .input-group.has-error > input[type='radio'] {
+        color: red;
+      }
+
+      .hidden-label {
+        font-weight: 300;
+      }
+
+      .error-message-container {
+        display: none;
+        border: 1px solid red;
+        background: #ff9a9a;
+        text-align: center;
+        padding-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .form-control {
+        padding: 10px 15px;
+        border: 1px solid #777777;
+      }
+
+      .btn-prev {
+        display: none;
+      }
+      
+
+
+      .progress-bar {
+        margin-bottom: 20px;
+        width: 100%;
+        height: 4px;
+        background-color: #a0bc57;
+        transform-origin: left center;
+        transform: scaleX(0.01);
+        transition: transform 0.5s ease;
+      }
+
+      .protect {
+        margin-bottom: 10px;
+      }
+
+      .input-group.text-center {
+        text-align: right;
+      }
+
+      button {
+        color: #ffffff;
+        font-style: normal;
+        font-weight: 700;
+        background-color: #ff8200;
+        border-radius: 100px;
+        /* border: 0; */
+        cursor: pointer;
+        font-size: 1em;
+        /* width: 150px; */
+        height: 48px;
+        letter-spacing: .8px;
+        line-height: 19px;
+        margin: 10px 0;
+        overflow: hidden;
+        padding: 14px 30px 15px;
+        text-transform: uppercase;
+        transition: all .15s ease;
+        z-index: 0;
+        text-align: center;
+        outline: none;
+      }
+
+      button:hover {
+        background-color: #6eb7c2;
+        transition: .3s ease-in;
+      }
+
+      .tcpa-container {
+        text-align: center;
+      }
+
+      .tcpa-label {
+        text-align: center;
+        border: 1px solid rgb(170, 170, 170);
+        font-size: 11px;
+        color: rgb(170, 170, 170);
+        max-width: 450px;
+        line-height: 10px;
+        padding: 5px;
+      }
+
+      /* Thank You Page */
+      .thank-you-container {
+        display: none;
+      }
+
+      .thank-you-container .thank-you {
+        font-weight: bold;
+      }
+
+      .thank-you-container .green-box {
+        border: 1px solid green;
+        background-color: #0080001a;
+        border-radius: 4px;
+        padding: 15px;
+      }
+
+      .thank-you-container .next-steps {
+        padding: 25px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      *, :after, :before {
+        box-sizing: border-box;
+      }
+
+      .radio-colored input {
+        position: absolute;
+        visibility: hidden;
+      }
+
+      input[type=checkbox], input[type=radio] {
+        margin: 4px 0 0;
+        margin-top: 1px\9;
+        line-height: normal;
+      }
+
+      input[type=checkbox], input[type=radio] {
+          box-sizing: border-box;
+          padding: 0;
+      }
+
+      input {
+        text-rendering: auto;
+        color: -internal-light-dark(black, white);
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: textfield;
+        background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        margin: 0em;
+        font: 400 13.3333px Arial;
+        padding: 1px 2px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+        border-image: initial;
+      }      
+
+
+      .radio-colored input:checked~label {
+        font-family: Montserrat,Helvetica,Arial,sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        background-color: #6eb7c2;
+        border-color: #6eb7c2;
+        box-shadow: inset 0 0 5px 0 rgba(0,0,0,.25);
+        color: #fff;
+      }
+
+      .radio-colored label {
+        background-color: #dcdcdc;
+        border: 1px solid #c4c4c0;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 30px;
+        margin: 10px auto;
+        padding: 10px 25px 10px 60px;
+        position: relative;
+        transition: all .15s linear;
+        white-space: nowrap;
+     } 
+
+      *, :after, :before {
+          box-sizing: border-box;
+        }
+
+        *, :after, :before {
+           box-sizing: border-box;
+      }
+
+      .radio-colored input:checked~span {
+        border: 1px solid transparent;
+    }
+
+
+    .radio-colored span {
+        background-color: #fff;
+        border: 1px solid #bab9ba;
+        cursor: pointer;
+        pointer-events: none;
+        height: 16px;
+        -webkit-transform: translate(28px,-44px);
+        -ms-transform: translate(28px,-44px);
+        transform: translate(28px,-44px);
+        transition: border ease .15s;
+        width: 16px;
+      }
+
+      .radio-colored span, .radio-colored span::before {
+      border-radius: 100%;
+      display: block;
+      position: absolute;
+      }
+
+    .radio-colored input:checked~span::before {
+      background: #2c494d;
+    }
+    .radio-colored span::before {
+        content: '';
+        height: 12px;
+        margin: auto;
+        -webkit-transform: translate(1px,1px);
+        -ms-transform: translate(1px,1px);
+        transform: translate(1px,1px);
+        transition: background ease .15s;
+        width: 12px;
+    }
+
+    .radio-colored span, .radio-colored span::before {
+        border-radius: 100%;
+        display: block;
+        position: absolute;
+    }
+
+    .image-selector input {
+      display: none;
+    }
+
+    .image-selector__group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .image-selector {
+    display: inline-block;
+    height: 87px;
+    margin: 0 0 8px;
+    width: 32.5%;
+    }
+
+    .image-selector input:checked~.image-selector__border {
+        border: 3px solid #6eb7c2;
+        border-radius: 8px;
+        padding: 2px;
+    }
+
+
+    .image-selector__border {
+        border: 3px solid #fff;
+        border-radius: 8px;
+        display: inline-block;
+        height: 100%;
+        padding: 2px;
+        width: 100%;
+    }
+
+
+    .image-selector label {
+        background-position: center 1px;
+        background-size: cover;
+        border-radius: 5px;
+        box-shadow: 0 3px 4px 0 rgba(0,0,0,.2);
+        cursor: pointer;
+        height: 100%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .material--asphalt {
+        background-image: url(https://modernize.com/quote/resources/assets/images/illustrations/roofing/materials/asphalt.jpg);
+    }
+
+    .material--clay {
+      background-image: url(https://modernize.com/quote/resources/assets/images/illustrations/roofing/materials/clay.jpg);
+    }
+
+    .material--slate {
+      background-image: url(https://modernize.com/quote/resources/assets/images/illustrations/roofing/materials/slate.jpg);
+    }
+
+    .material--wood {
+        background-image: url(https://modernize.com/quote/resources/assets/images/illustrations/roofing/materials/wood.jpg);
+    }
+
+    .material--other {
+      background-image: url(https://modernize.com/quote/resources/assets/images/illustrations/roofing/materials/other.jpg);
+    }
+
+    .material--ns {
+        background-color: #bab9ba;
+        padding-top: 20px;
+    }
+
+    .material {
+        text-transform: uppercase;
+    }
+
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .image-selector label span {
+      font-family: Montserrat,Helvetica,Arial,sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+      font-size: 18px;
+    }
+
+
+    .material span {
+        line-height: 77px;
+    }
+
+    .image-selector span, .mobile-bottom-toolbar-overlay--active, .reviews-block .card__author b {
+        display: block;
+    }
+
+    .material--ns span {
+    line-height: 18px;
+    }
+
+    .form-control output {
+      display: block;
+      color: #545253;
+    }
+
+    .form-group--tooltip
+    .form-control {
+      padding-right: 45px;
+    }
+
+    .form-control.zip {
+      max-width: 200px;
+    }
+
+    .form-control {
+      box-shadow: inset 2px 1px 2px 0 rgba(0,0,0,.08), inset -2px 0 2px 0 rgba(0,0,0,.08);
+      font-size: 16px;
+      line-height: 19px;
+      margin: 0 0 15px;
+      padding: 15px;
+      position: relative;
+    } 
+
+    .form-control {
+      width: 100%;
+      height: 48px;
+      background-color: #fff;
+      border: 1px solid #dcdcdc;
+      border-radius: 4px;
+      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+
+    .form-group--zip .form-group__tooltip {
+      left: 165px;
+      right: auto;
+    }    
+
+    .form-group__tooltip {
+      bottom: auto;
+      position: absolute;
+      top: 12px;
+      z-index: 2;
+    }
+
+    .checkbox label {
+      display: inline-block;
+      height: 100%;
+      position: relative;
+    }
+
+    .checkbox label, 
+    .radio label {
+      min-height: 22px;
+    }
+
+    .checkbox label, 
+    .checkbox-inline,
+    .radio label, .radio-inline {
+      margin-bottom: 0;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    #homeowner {
+      cursor: pointer;
+    }
+
+    #homeowner ::after {
+      color: #6eb7c2;
+    }
+
+    .homeowner {
+      font-weight: 300;
+      letter-spacing: .5px;
+    }
+
+    .protect {
+      font-size: .65em;
+    }
+
+    .tcpa-label {
+      font-size: .40em;
+    }
+
+    .street {
+      font-weight: 400;
+      font-size: 1em;
+      color: #383838;
+      margin: 10px;
+    }
+
+    .qualify-wrapper {
+      display: flex;
+    }
+
+    .qualify-text {
+      padding-right: 10px;
+      font-weight: 400;
+    }
+
+    .thank-you-container .green-box {
+        border: 1px solid green;
+        background-color: #0080001a;
+        border-radius: 4px;
+        padding: 15px;
+      }
+
+      .thank-you-container .next-steps {
+        font-size: 1.15em;
+        color: #383838;
+        letter-spacing: .5px;
+        padding: 25px;
+      }
+
+      .thank-you-sub {
+        font-weight: 500;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper nojs">
+      <form
+        method="post"
+        action="https://collector.bluefireforms.com/api/data/lead/732ac970-3e28-4cf8-95b2-69d095b26040"
+        id="modernize-1"
+        class="form-wizard js-form-wizard"
+      >
+        <div class="steps-container">
+          <div>
+            <h5 class="your-progress">your progress</h5>
+            <div class="progress-bar js-progress-bar"></div>
+          </div>
+          <input id="leadid_token" name="leadid_token" type="hidden" />
+          <input id="pageid_token" name="___pageid___" type="hidden" />
+
+
+     
+
+          <div class="step js-step">
+            <div class="input-group js-input-group">
+              <h5 class="text-one">
+                Do you need to <span class="bold-text">replace</span> or <span class="bold-text">repair</span> an
+                existing roof?
+              </h5>
+              <div class="form-group parent-error">
+                <div class="radio-colored">
+                  <input id="repair-repairno" type="radio" name="repair" value="No" checked="checked" data-required="nonempty"> 
+                    <label for="repair-repairno">Replace</label> 
+                    <span></span></div>
+                <div class="radio-colored">
+                  <input id="repair-repairyes" type="radio" name="repair" value="Yes" data-required="nonempty"> 
+                  <label for="repair-repairyes">Repair</label> 
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step js-step">
+            <div class="input-group js-input-group">
+              <h5 class="text-one"><span class="bold-text">What type of roof</span> are you looking for?</h5>
+
+
+              <div class="form-group parent-error">
+                <div class="image-selector__group">
+                  <span class="image-selector">
+                    <input id="roofingMaterial-asphalt" type="radio" name="roofingMaterial" value="Asphalt Shingle" data-required="nonempty" checked="checked" required=""> 
+                    <span class="image-selector__border">
+                      <label class="material material--asphalt" for="roofingMaterial-asphalt">
+                        <span>Asphalt</span>
+                      </label> 
+                    </span>
+                  </span>
+                  <span class="image-selector">
+                    <input id="roofingMaterial-tile" type="radio" name="roofingMaterial" value="Tile" data-required="nonempty" required="">
+                    <span class="image-selector__border"><label class="material material--clay" for="roofingMaterial-tile">
+                      <span>Clay</span>
+                    </label> 
+                  </span>
+                </span>
+                <span class="image-selector">
+                  <input id="roofingMaterial-slate" type="radio" name="roofingMaterial" value="Natural Slate" data-required="nonempty" required=""> 
+                  <span class="image-selector__border">
+                    <label class="material material--slate" for="roofingMaterial-slate">
+                      <span>Slate</span>
+                    </label>
+                   </span>
+                  </span>
+                  <span class="image-selector">
+                    <input id="roofingMaterial-wood" type="radio" name="roofingMaterial" value="Wood/Composite Shake" data-required="nonempty" required=""> 
+                    <span class="image-selector__border">
+                      <label class="material material--wood" for="roofingMaterial-wood">
+                        <span>Wood</span>
+                      </label> 
+                    </span>
+                  </span>
+                  <span class="image-selector">
+                    <input id="roofingMaterial-other" type="radio" name="roofingMaterial" value="Asphalt Shingle" data-required="nonempty" required="">
+                     <span class="image-selector__border">
+                       <label class="material material--other" for="roofingMaterial-other">
+                         <span>Other</span>
+                        </label> 
+                      </span>
+                    </span>
+                    <span class="image-selector">
+                      <input id="roofingMaterial-notsure" type="radio" name="roofingMaterial" value="Asphalt Shingle" data-required="nonempty" required=""> 
+                      <span class="image-selector__border">
+                        <label class="material material--ns" for="roofingMaterial-notsure">
+                          <span>Not</span> <span>Sure</span>
+                        </label>
+                      </span>
+                    </span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="step js-step">
+            <div class="input-group js-input-group">
+              <h5 class="text-one"><span class="bold-text">Where</span> will this project take place?</h5>
+
+              <div class="form-group form-group--zip form-group--tooltip parent-error"><input id="zip" type="tel" name="zip"
+                  class="form-control zip" maxlength="5" data-required="zip" placeholder="Zip Code" required="">
+                <!-- <div class="form-group__tooltip"><i class="form-group__tooltip-icon icon-fill-question" data-bind="tooltip-icon"></i>
+                  <div class="form-group__tooltip-message">Enter your zip code to find available contractors in&nbsp;your&nbsp;area.
+                  </div>
+                </div> -->
+              </div>
+
+              <!-- <label for="zip-code" >
+              <input
+                type="tel"
+                name="zip"
+                id="zip-code"
+                maxlength="5"
+                class="form-control js-form-control"
+                placeholder="Zip Code*"
+                pattern="^\d{5}(-\d{4})?$"/> -->
+                
+            </div>
+          </div>
+
+          <div class="step js-step">
+            <div class="input-group js-input-group">
+              <h5 class="text-one">Enter your <span class="bold-text">address</span> to find the best results for your area.</h5>
+              <label class="street" for="street-address" >Street Address*</label>
+              <input
+                type="text"
+                name="street"
+                id="street-address"
+                maxlength="256"
+                class="form-control js-form-control googleAutocomplete"
+                placeholder="Please enter a valid address"
+                required=""
+              />
+            </div>
+            <div class="input-group js-input-group">
+              <label class="homeowner">
+              <input type="checkbox" id="homeowner" name="homeowner" value="Yes"  />
+              I am the homeowner.</label>
+            </div>
+          </div>
+
+          <div class="step js-step">
+            <h5 class="text-one">Enter your name.</h5>
+            <div class="input-group js-input-group">
+              <input
+                type="text"
+                name="first"
+                id="first-name"
+                maxlength="256"
+                class="form-control js-form-control"
+                placeholder="First Name*"
+                required=""
+              />
+            </div>
+            <div class="input-group js-input-group">
+              <input
+                type="text"
+                name="last"
+                id="last-name"
+                maxlength="256"
+                class="form-control js-form-control"
+                placeholder="Last Name*"
+                required=""
+              />
+            </div>
+          </div>
+
+          <div class="step js-step">
+            <div class="qualify-wrapper">
+              <h4 class="qualify-text">You Qualify!</h4> <i class="fa fa-check-circle" style="color: green"></i> 
+            </div>
+            <h5 class="text-one"><span class="bold-text">Where</span> can we send your results and next steps?</h5>
+            <div class="input-group js-input-group">
+              <label for="email-address" class="hidden-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email-address"
+                maxlength="256"
+                class="form-control js-form-control"
+                placeholder="Please enter your email"
+                required=""
+              />
+            </div>
+          </div>
+
+          <div class="step js-step">
+            <h3>Congratulations!</h3>
+            <h5 class="text-one">Enter your information and get your results - fast!</h5>
+            <div class="input-group js-input-group">
+              <label for="phone-number" class="hidden-label">Phone Number*</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone-number"
+                maxlength="256"
+                class="form-control js-form-control"
+                placeholder="(xxx) xxx-xxxx"
+                pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"
+                required=""
+              />
+            </div>
+          </div>
+
+          <div class="error-message-container">
+            <h5>Oops! Please fill out all required fields.</h5>
+          </div>
+
+          <div class="input-group text-center">
+            <button type="button" class="btn-prev js-btn-prev">&#8592;</button>
+            <button
+              type="button"
+              class="js-btn-next"
+              data-step-text="Next &#8594;"
+              data-final-step-text="SEE IF I QUALIFY"
+            >
+              Next
+            </button>
+          </div>
+
+          <div class="tcpa-container">
+            <div class="protect">
+              <i class="fas fa-lock"></i>
+              We protect your information.
+            </div>
+            <input class="tcpa" type="hidden" id="leadid_tcpa_disclosure" /><label
+              for="leadid_tcpa_disclosure"
+              class="tcpa-label"
+              >By clicking above, you authorize AmericanRoofers and up to four Roofing Companies to call you and send
+              you pre-recorded messages and text messages at the number you entered above, using an autodialer, with
+              offers about their products or services, even if your phone number is on any national or state "Do Not
+              Call" list. Message and data rates may apply. Your consent here is not based on a condition of
+              purchase.</label>
+          </div>
+        </div>
+        <div class="thank-you-container">
+          <div class="green-box">
+            <h1 class="text-center thank-you"><i class="fa fa-check-circle" style="color: green"></i> Thank you</h1>
+            <h3 class="text-center thank-you-sub">Your request has been received. Here is what to expect next.</h3>
+          </div>
+
+          <div class="next-steps">
+            <h4>Next steps</h4>
+            <ul role="list">
+              <li>Your information has been sent to our most trusted company in your area.<br /></li>
+              <br>
+              <li>
+                Our company will call you shortly and you may not recognize the number. &nbsp;Please make sure you
+                answer when they call.<br />
+              </li>
+              <br>
+              <li>Once you’ve answered, they will verify your information and schedule a free consultation.<br /></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--  Load Google Places API  -->
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHsSZiH0zQPyfEMOAsCAi1_EubqVJABR4&libraries=places"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/all.js"
+      integrity="sha256-aLNFps+os5n+KfcuxSD1/vOz7c/4tAq+Cnpspw9ZGYc="
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <script defer src="js/bfl.js"></script>
+  </body>
+</html>
